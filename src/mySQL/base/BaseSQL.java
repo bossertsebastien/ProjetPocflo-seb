@@ -1,18 +1,31 @@
 package mySQL.base;
 
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.ResourceBundle;
-import com.mysql.jdbc.Connection;
+
+
 import personne.base.Personne;
 
 
 public class BaseSQL {
+	
+	static {
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+		} catch (IllegalAccessException | ClassNotFoundException e) {
+			e.printStackTrace();
+		
+		}catch(InstantiationException e) {
+			e.printStackTrace();	
+		}
+
+}
 
 	String config = "config";
 	Connection co = null;
@@ -23,19 +36,7 @@ public class BaseSQL {
 	String user = null;
 	String password = null;
 
-	static {
-			try {
-				Class.forName("com.mysql.jdbc.Driver").newInstance();
-			} catch (IllegalAccessException | ClassNotFoundException e) {
-				e.printStackTrace();
-			
-			}catch(InstantiationException e) {
-				e.printStackTrace();	
-			}
-
-	}
 	
-
 	public void ouvrir() {
 		try {
 			init();
@@ -97,43 +98,9 @@ public class BaseSQL {
 	}
 
 
-
 	public void fermer() throws SQLException {
 		if(co != null) co.close();		
 	}
-
-
-
-
-	public static void main(String[] args) throws SQLException{
-		BaseSQL bd = new BaseSQL();
-		ArrayList<Personne> liste;
-		//Personne p = new Personne("Dupont", "jean", "dupont.jean@mail.fr", true);
-		Personne p2 = new Personne("skywalker", "luc", "luc.sky@mail.fr", false);
-		bd.ouvrir();
-		//bd.enregistrerPersonne(p2);
-		liste = bd.listerPersonne();
-		Integer i = 0;
-		Iterator<Personne> it = liste.iterator();
-		while(it.hasNext()) {
-			System.out.print(liste.get(i).getNom()+" ");
-			System.out.println(liste.get(i).getPrenom());
-			System.out.println(liste.get(i).getEmail());
-			String ras = null;
-			if(liste.get(i).getRAS()) {
-				ras = "oui";
-			}else {
-				ras = "non";
-			}
-			liste.get(i).getRAS();
-			System.out.println("Risque Aggrav� de Sant� : " + ras );
-			System.out.println("");
-			it.next();
-			i++;
-		}
-		bd.fermer();
-	}
-
 
 }
 
