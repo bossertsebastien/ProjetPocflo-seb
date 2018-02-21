@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet" href="../css/Connection.css" />
+<link type="text/css" rel="stylesheet" href="css/Connection.css" />
 <title>Connection</title>
 </head>
 
@@ -29,6 +29,14 @@
         <label>Mot de passe <input type="password" name="field5" /></label>
         <label>Confirmer le mot de passe<input type="password" name="field6" /></label>
     </div>
+    
+    <div class="section"><span>3</span>Risque de santé</div>
+        <div class="inner-wrap">
+        <label>Risque de santé ? </label>
+        <h3><input type="checkbox" name="field7">Cochez si oui</h3>
+    </div>
+    
+    
     <div class="button-section">
      <input type="submit" name="Sign Up" value="Je m'inscris"/>
      <span class="privacy-policy">

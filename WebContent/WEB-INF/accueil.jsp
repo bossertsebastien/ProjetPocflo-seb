@@ -41,10 +41,10 @@
               <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Inscription</a>
+              <a class="nav-link" href="ServletInscription" >Inscription</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" action="${pageContext.request.contextPath}/myservlet" >Contact</a>
+              <a class="nav-link" >Contact</a>
             </li>
           </ul>
         </div>
