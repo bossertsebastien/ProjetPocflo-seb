@@ -4,6 +4,8 @@
 <html>
 <head>
 
+<jsp:useBean id="creation" class="java.lang.String" scope="request" />
+
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
@@ -51,36 +53,36 @@
     
 <div class="form-style-10">
 <h1>Inscrivez vous!<span>Vous aurez accès à plus de contenu sur notre site!</span></h1>
-<form>
+<form method="post" action="ServletInscription">
     <div class="section"><span>1</span>Nom &amp; Adresse</div>
     <div class="inner-wrap">
-        <label>Votre nom <input type="text" name="field1" /></label>
-        <label>Votre Adresse Postale <textarea name="field2"></textarea></label>
+        <label>Votre nom <input type="text" name="nom" /></label>
+        <label>Votre Adresse Postale <textarea name="prenom"></textarea></label>
     </div>
 
     <div class="section"><span>2</span>Email &amp; Téléphone</div>
     <div class="inner-wrap">
-        <label>Adresse email <input type="email" name="field3" /></label>
-        <label>Numero de telephone <input type="text" name="field4" /></label>
+        <label>Adresse email <input type="email" name="email" /></label>
+        <label>Numero de telephone <input type="text" name="numeroTelephone" /></label>
     </div>
 
     <div class="section"><span>3</span>Mot de passe</div>
         <div class="inner-wrap">
-        <label>Mot de passe <input type="password" name="field5" /></label>
-        <label>Confirmer le mot de passe<input type="password" name="field6" /></label>
+        <label>Mot de passe <input type="password" name="MDP" /></label>
+        <label>Confirmer le mot de passe<input type="password" name="MDPConfirm" /></label>
     </div>
     
     <div class="section"><span>3</span>Risque de santé</div>
         <div class="inner-wrap">
         <label>Risque de santé ? </label>
-        <h3><input type="checkbox" name="field7">Cochez si oui</h3>
+        <h3><input type="checkbox" name="RAS">Cochez si oui</h3>
     </div>
     
     
     <div class="button-section">
      <input type="submit" name="Sign Up" value="Je m'inscris"/>
      <span class="privacy-policy">
-     <input type="checkbox" name="field7">J'ai bien lu et accepte la charte
+     <input type="checkbox" name="charte">J'ai bien lu et accepte la charte
      </span>
     </div>
 </form>
