@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mySQL.base.*;
+import personne.base.*;
 
 /**
  * Servlet implementation class ServletInscription
@@ -34,8 +36,18 @@ public class ServletInscription extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		BaseSQL bd = new BaseSQL();
+		String email = null;
+		String nom = null;
+		String prenom = null;
+		boolean RAS = false; 
+		request.getSession().setAttribute("email", email);
+		request.getSession().setAttribute("nom", nom);
+		request.getSession().setAttribute("prenom", prenom);
+		request.getSession().setAttribute("RAS", RAS);
+		System.out.println(nom +prenom+ email+ RAS);
+		Personne p2 = new Personne(nom, prenom, email, RAS);
+		
 	}
 
 }
