@@ -33,12 +33,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="ServletAccueil">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="ServletConnexion">Connexion</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="ServletInscription" >Inscription</a>
@@ -59,9 +59,14 @@
     <!-- Content section -->
     <section class="py-5">
       <div class="container">
-        <h1>Section Heading</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+        <h1>Que fesons nous ?</h1>
+        <p>En plus de sensibiliser les personnes susceptibles d'être sous le coup d'un risque aggravé de santé, We Moë veut arriver à "la mise en place d'un contrat collectif
+         pour mutualiser et annuler le risque. 
+         Il s'agit d'arriver à un équilibre des conditions financières", explique Gaïdig Le Moing.
+         We Moë portera les futurs contrats avec l'objectif de signer des contats sans exclusion ni surprimes, en partenariat avec les assureurs. 
+         La fondatrice du projet pointe l'un des avantages : "Si l'on s'insère au plus tôt dans ce type de contrat collectif,
+         on s'assure, plus tard, de pouvoir réemprunter, même en cas de problème de santé."
+		 La Finistérienne vise aussi la mise en oeuvre d'un fonds de dotation comme fonds de garantie, pour consolider le contrat collectif.</p>
       </div>
     </section>
 
@@ -74,7 +79,7 @@
     <!-- Content section -->
     <section class="py-5">
       <div class="container">
-        <h1>Section Heading</h1>
+        <h1>Les membres</h1>
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
       </div>
@@ -83,7 +88,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Bossert Kerherne 2018</p>
       </div>
       <!-- /.container -->
     </footer>
