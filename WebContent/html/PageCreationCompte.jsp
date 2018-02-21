@@ -3,12 +3,56 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/full-width-pics.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/full-width-pics.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link type="text/css" rel="stylesheet" href="css/Connection.css" />
 <title>Connection</title>
 </head>
 
 <body>
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ServletInscription" >Inscription</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header - set the background image for the header in the line below -->
+    <header class="py-5 bg-image-full" style="background-image: url('img/we-moe-assurance-emprunteur-sante-groupe-ensemble.jpg');">
+     	<img class="img-fluid d-block mx-auto" src="img/cropped-logoWeMoe.jpg" alt="">
+    </header>
+    
+    
 <div class="form-style-10">
 <h1>Inscrivez vous!<span>Vous aurez accès à plus de contenu sur notre site!</span></h1>
 <form>
@@ -45,5 +89,13 @@
     </div>
 </form>
 </div>
+
+ <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 </body>
 </html>
