@@ -6,10 +6,6 @@
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="css/full-width-pics.css" rel="stylesheet">
-
 <!-- Custom styles for this template -->
 <link href="css/full-width-pics.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,12 +25,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="ServletAccueil">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+                 <a class="nav-link" href="ServletConnexion">Connexion</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="ServletInscription" >Inscription</a>
@@ -93,7 +89,7 @@
  <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Bossert Kerherne 2018</p>
       </div>
       <!-- /.container -->
     </footer>
