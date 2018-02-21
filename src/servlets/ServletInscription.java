@@ -54,7 +54,7 @@ public class ServletInscription extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.getServletContext().getRequestDispatcher("/html/accueil.jsp").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 	}
 
 }
