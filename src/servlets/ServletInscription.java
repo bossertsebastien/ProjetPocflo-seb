@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,16 +39,21 @@ public class ServletInscription extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BaseSQL bd = new BaseSQL();
-		String email = null;
-		String nom = null;
-		String prenom = null;
-		boolean RAS = false; 
-		request.getSession().setAttribute("email", email);
-		request.getSession().setAttribute("nom", nom);
-		request.getSession().setAttribute("prenom", prenom);
-		request.getSession().setAttribute("RAS", RAS);
+		String email = request.getParameter("email");;
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");;
+		boolean RAS = Boolean.parseBoolean(request.getParameter("RAS"));
+		
 		System.out.println(nom +prenom+ email+ RAS);
 		Personne p2 = new Personne(nom, prenom, email, RAS);
+		
+		try {
+			bd.ouvrir();
+			bd.enregistrerPersonne(p2);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

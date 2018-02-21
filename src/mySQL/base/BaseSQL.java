@@ -23,6 +23,18 @@ public class BaseSQL {
 	String user = null;
 	String password = null;
 
+	static {
+			try {
+				Class.forName("com.mysql.jdbc.Driver").newInstance();
+			} catch (IllegalAccessException | ClassNotFoundException e) {
+				e.printStackTrace();
+			
+			}catch(InstantiationException e) {
+				e.printStackTrace();	
+			}
+
+	}
+	
 
 	public void ouvrir() {
 		try {
@@ -40,7 +52,7 @@ public class BaseSQL {
 		url = rb.getString("url");
 		user = rb.getString("user");
 		password = rb.getString("password");
-		//		System.out.println("url : "+ url + "password : " + password  );
+		System.out.println("url : "+ url + "password : " + password  );
 	}
 
 	public void get() {
@@ -114,7 +126,7 @@ public class BaseSQL {
 				ras = "non";
 			}
 			liste.get(i).getRAS();
-			System.out.println("Risque Aggravé de Santé : " + ras );
+			System.out.println("Risque Aggravï¿½ de Santï¿½ : " + ras );
 			System.out.println("");
 			it.next();
 			i++;
