@@ -79,9 +79,7 @@
     
     <div class="button-section">
      <input type="submit" name="Sign Up" value="Je m'inscris"/>
-     <span class="privacy-policy">
      <input type="checkbox" name="field7">J'ai bien lu et accepte la charte
-     </span>
     </div>
 </form>
 </div>
