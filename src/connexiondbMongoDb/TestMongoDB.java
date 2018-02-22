@@ -10,7 +10,7 @@ public class TestMongoDB {
 	public static void main(String[] args) throws SQLException {
 		ConnectMongo monMongo = new ConnectMongo();
 		
-		boolean verif = monMongo.requeterecherche(null);
+		boolean verif = monMongo.requeterecherchepages(null);
 		if (verif == false) {
 				System.out.println("echec requete");
 			}else {

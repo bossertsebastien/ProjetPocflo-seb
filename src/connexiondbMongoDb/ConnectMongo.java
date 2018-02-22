@@ -1,18 +1,11 @@
 package connexiondbMongoDb;
 
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import org.bson.Document;
-
-import com.dbschema.MongoPreparedStatement;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 
@@ -39,7 +32,7 @@ public class ConnectMongo {
 		
 			MongoClientURI connectionString = new MongoClientURI("mongodb://obiwan2.univ-brest.fr:27017");
 			mongoClient = new MongoClient(connectionString);
-			mongodb = getmongoClient().getDatabase("BDMongomaster005");
+			mongodb = getmongoClient().getDatabase("BDServletInfo");
 //			MongoCollection<Document> collection = mongodb.getCollection("oeuvres");
 ////			Document myDoc = collection.find().first();
 //			System.out.println(myDoc.toJson());
@@ -47,14 +40,17 @@ public class ConnectMongo {
 
 	}
 	
-	public boolean requeterecherche(DBCursor requetemongo) {
-		MongoCollection<Document> collection = getmongodb().getCollection("oeuvres");
+	public boolean requeterecherchepages(String profil) {
+		DBCollection collection = (DBCollection) getmongodb().getCollection("urlprofil");
+		
 		 try {
 			 
-			 MongoCursor<Document> cursor = collection.find().iterator();
+			 BasicDBObject fields = new BasicDBObject();
+			 fields.put("profil", profil);
+
+			 DBCursor cursor = collection.find(fields);
 			 while (cursor.hasNext()) {
-				 Document obj = cursor.next();
-				 System.out.println(obj.toJson());
+			 	System.out.println(cursor.next());
 			 }
 			
 		     return true;
