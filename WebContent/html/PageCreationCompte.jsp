@@ -38,7 +38,7 @@
               <a class="nav-link" href="ServletInscription" >Inscription</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >Contact</a>
+              <a class="nav-link" href="ServletInfo" >Vous informez</a>
             </li>
           </ul>
         </div>
