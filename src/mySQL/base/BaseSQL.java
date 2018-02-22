@@ -53,10 +53,26 @@ public class BaseSQL {
 		url = rb.getString("url");
 		user = rb.getString("user");
 		password = rb.getString("password");
-		System.out.println("url : "+ url + "password : " + password  );
+		//System.out.println("url : "+ url + "password : " + password  );
 	}
 
-	public void get() {
+	public boolean getPersonne(String nom, String mdp) {
+		boolean exist = false;
+		System.out.println("nom : "+ nom + "password : " + mdp  );
+		try  {
+			String sql = "select * from P_personne where nom=? and prenom=?;";
+			PreparedStatement st =  co.prepareStatement(sql);
+			st.setString(1, nom);
+			st.setString(2, mdp);
+			ResultSet rs = (ResultSet) st.executeQuery();
+			while (rs.next()) {
+				if(rs.getString("nom").equals(nom) && rs.getString("prenom").equals(mdp) )exist = true;
+			}	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return exist;
 
 
 	}
