@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import neo4j.base.BaseNeo4j;
 
 /**
  * Servlet implementation class ServletParcours
@@ -27,6 +28,14 @@ public class ServletParcours extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getServletContext().getRequestDispatcher("/html/Parcours.jsp").forward(request, response);
+		String page;
+		BaseNeo4j base = new BaseNeo4j();
+		base.connection();
+		base.get("RAS", "changerAssurance" );
+		base.test();
+		//System.out.println(page);
+		base.fermer();
+		
 	}
 
 	/**
