@@ -19,12 +19,13 @@ public class BaseNeo4j {
 	}
 	
 	
-	public void get( ) {
+	public void get(String ras ) {
 		// Querying
 		try  {
 			Statement stmt = con.createStatement();
-		    ResultSet rs = stmt.executeQuery("MATCH (n:fk_Artist) RETURN n.nom");
+		    ResultSet rs = stmt.executeQuery("MATCH (etat:MP_Risque) RETURN n.nom");
 		    while (rs.next()) {
+		    	// rs.getString("");
 		        System.out.println(rs.getString("n.nom"));
 		    }
 		    } catch (SQLException e) {

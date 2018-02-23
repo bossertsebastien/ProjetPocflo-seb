@@ -42,7 +42,7 @@ public class ServletConnexion extends HttpServlet {
 			base.ouvrir();
 			String ident = request.getParameter("ident");
 			String mdp = request.getParameter("mdpConnexion");
-			if(base.getPersonne(ident,mdp) == true) {
+			if(base.getPersonne(ident,mdp)) {
 				response.sendRedirect("/ProjetPocflo-seb/ServletAccueil");
 			}else {
 				System.out.println( "Connexion raté" );

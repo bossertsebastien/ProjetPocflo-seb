@@ -58,7 +58,7 @@
 			<div class="section"><span>2</span>Identifiant &amp; Mot de passe</div>
     		<div class="inner-wrap">
         		<label>Identifiant&nbsp;:</label><input name="ident" type="text" value=""/>
-        		<label>Mot de passe&nbsp;:</label><input name="mdp" type="text" value="" />
+        		<label>Mot de passe&nbsp;:</label><input name="mdpConnexion" type="text" value="" />
    			</div>
 				
 
