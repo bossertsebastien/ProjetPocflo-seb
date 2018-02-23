@@ -42,13 +42,7 @@ public class Servletinfo extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getServletContext().getRequestDispatcher("/html/Info.jsp").forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		try {
 			ConnectMongo connection = new ConnectMongo();
 			ArrayList<String> mesDescription = new ArrayList<String>();
@@ -58,16 +52,24 @@ public class Servletinfo extends HttpServlet {
 				 
 			MongoCursor<Document> cursor = collection.find().iterator();
 			while (cursor.hasNext()) {
-					 
 					 Document obj = cursor.next();
+					 System.out.println(obj.getString("profil"));
 					 if (obj.getString("profil").equals("nonconnecter"))
 						 	mesDescription.add(obj.getString("Description"));
 			}
+			request.getServletContext().getRequestDispatcher("/html/Info.jsp").forward(request, response);
 			request.setAttribute("Description", mesDescription);
 			     
 			 } catch(Exception e) {
 				 System.out.println(e.getMessage());
 			 }
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 
 		}
