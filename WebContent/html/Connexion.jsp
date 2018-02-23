@@ -18,7 +18,7 @@
 </head>
 <body>
 
-   <!-- Navigation -->
+<!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>
@@ -33,19 +33,22 @@
               </a>
             </li>
             <li class="nav-item">
-                 <a class="nav-link" href="ServletConnexion">Connexion</a>
+              <a class="nav-link" href="ServletConnexion">Connexion</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="ServletInscription" >Inscription</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >Contact</a>
+              <a class="nav-link" href="Servletinfo" >Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ServletParcours" >Parcours</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    
+
     <!-- Header - set the background image for the header in the line below -->
     <header class="py-5 bg-image-full" style="background-image: url('img/we-moe-assurance-emprunteur-sante-groupe-ensemble.jpg');">
      	<img class="img-fluid d-block mx-auto" src="img/cropped-logoWeMoe.jpg" alt="">

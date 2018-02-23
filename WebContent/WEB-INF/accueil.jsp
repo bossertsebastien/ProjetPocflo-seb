@@ -44,7 +44,10 @@
               <a class="nav-link" href="ServletInscription" >Inscription</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >Contact</a>
+              <a class="nav-link" href="Servletinfo" >Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ServletParcours" >Parcours</a>
             </li>
           </ul>
         </div>
