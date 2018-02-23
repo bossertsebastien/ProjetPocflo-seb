@@ -38,18 +38,22 @@ public class ServletInscription extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		boolean etatDeSante = false;
 		BaseSQL bd = new BaseSQL();
 		String email = request.getParameter("email");;
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");;
-		boolean RAS = Boolean.parseBoolean(request.getParameter("RAS"));
+		String RAS = request.getParameter("RAS");
 		
-		System.out.println(nom +prenom+ email+ RAS);
-		Personne p2 = new Personne(nom, prenom, email, RAS);
+		if(RAS!= null) etatDeSante = true;
+	
+		//System.out.println(nom +prenom+ email+ RAS);
+		Personne p2 = new Personne(nom, prenom, email, etatDeSante);
 		
 		try {
 			bd.ouvrir();
 			bd.enregistrerPersonne(p2);
+			bd.fermer();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

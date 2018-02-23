@@ -41,7 +41,7 @@ public class BaseSQL {
 		try {
 			init();
 			co = (Connection) DriverManager.getConnection(url,user,password);
-			System.out.println("Connection reussi");
+			//System.out.println("Connection reussi");
 		} catch (SQLException e) {
 			System.out.println("Fail connection");
 			e.printStackTrace();
@@ -58,7 +58,7 @@ public class BaseSQL {
 
 	public boolean getPersonne(String nom, String mdp) {
 		boolean exist = false;
-		System.out.println("nom : "+ nom + "password : " + mdp  );
+		//System.out.println("nom : "+ nom + "password : " + mdp  );
 		try  {
 			String sql = "select * from P_personne where nom=? and prenom=?;";
 			PreparedStatement st =  co.prepareStatement(sql);
@@ -109,7 +109,6 @@ public class BaseSQL {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return lstPersonne;
 	}
 
