@@ -1,11 +1,14 @@
 package connexiondbMongoDb;
 
 import java.sql.SQLException;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
+
+import org.bson.Document;
+
+
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
 
@@ -41,16 +44,13 @@ public class ConnectMongo {
 	}
 	
 	public boolean requeterecherchepages(String profil) {
-		DBCollection collection = (DBCollection) getmongodb().getCollection("urlprofil");
-		
+		MongoCollection<Document> collection = getmongodb().getCollection("oeuvres");
 		 try {
 			 
-			 BasicDBObject fields = new BasicDBObject();
-			 fields.put("profil", profil);
-
-			 DBCursor cursor = collection.find(fields);
+			 MongoCursor<Document> cursor = collection.find().iterator();
 			 while (cursor.hasNext()) {
-			 	System.out.println(cursor.next());
+				 Document obj = cursor.next();
+				 System.out.println(obj.toJson());
 			 }
 			
 		     return true;
@@ -59,7 +59,7 @@ public class ConnectMongo {
 			 System.out.println(e.getMessage());
 			 return false;
 		 }
-	     
+	     	     
 	        
 	}
 	

@@ -1,11 +1,27 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.bson.Document;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.connection.Connection;
+import com.mysql.jdbc.Statement;
+
+import connexiondbMongoDb.ConnectMongo;
 
 /**
  * Servlet implementation class Servletinfo
@@ -26,16 +42,33 @@ public class Servletinfo extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getServletContext().getRequestDispatcher("/html/Info.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		try {
+			ConnectMongo connection = new ConnectMongo();
+			ArrayList<String> mesDescription = new ArrayList<String>();
+			
+			
+			MongoCollection<Document> collection = connection.getmongodb().getCollection("urlprofil");
+				 
+			MongoCursor<Document> cursor = collection.find().iterator();
+			while (cursor.hasNext()) {
+					 
+					 Document obj = cursor.next();
+					 if (obj.getString("profil").equals("nonconnecter"))
+						 	mesDescription.add(obj.getString("Description"));
+			}
+			request.setAttribute("Description", mesDescription);
+			     
+			 } catch(Exception e) {
+				 System.out.println(e.getMessage());
+			 }
+		
 
-}
+		}
+	}
