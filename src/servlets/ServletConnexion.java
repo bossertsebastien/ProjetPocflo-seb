@@ -45,7 +45,7 @@ public class ServletConnexion extends HttpServlet {
 			if(base.getPersonne(ident,mdp) == true) {
 				response.sendRedirect("/ProjetPocflo-seb/ServletAccueil");
 			}else {
-				System.out.println( "Connexion raré" );
+				System.out.println( "Connexion raté" );
 				request.getServletContext().getRequestDispatcher("/html/Connexion.jsp").forward(request, response);
 			}
 			base.fermer();
